@@ -5,15 +5,7 @@
   QuadTree = (I) ->
     I ||= {}
 
-    $.reverseMerge I, 
-      bounds:
-        x: 0
-        y: 0
-        width: App.width || 640
-        height: App.height || 480
-
-    root = Node
-      bounds: I.bounds
+    root = Node()
 
     self =
       I: I
@@ -59,8 +51,8 @@
       bounds: 
         x: 0
         y: 0
-        width: 320
-        height: 240
+        width: App.width || 640
+        height: App.height || 480
       children: []
       depth: 0
       nodes: []
