@@ -115,7 +115,12 @@
       insert: (item) ->
         if I.nodes.length
           index = findQuadrant(item)
-          I.nodes[index].insert(item)
+
+          if !((I.x < (item.x + item.width) / 2 < I.x + I.width) && (I.y < (item.y + item.height) / 2 < I.y + I.height))
+            I.children.push(item)
+          else
+            I.nodes[index].insert(item)
+
           return true
 
         I.children.push(item)
