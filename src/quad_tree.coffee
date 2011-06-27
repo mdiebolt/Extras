@@ -113,14 +113,14 @@
         return I.nodes.clear()
 
       insert: (item) ->
-        if I.nodes.length && I.x < (item.x + item.width) < I.x + I.width
+        if I.nodes.length
           index = findQuadrant(item)
           I.nodes[index].insert(item)
           return true
 
         I.children.push(item)
 
-        if (I.depth < MAX_DEPTH) && (I.children.length > MAX_CHILDREN) 
+        if (I.depth < MAX_DEPTH) && (I.children.length > MAX_CHILDREN)          
           subdivide()
           I.children.each (child) ->
             return self.insert(child)
