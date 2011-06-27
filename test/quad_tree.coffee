@@ -1,7 +1,7 @@
 module "QuadTree"
 
 test "should exist", ->
-  qt = QuadTree(1)
+  qt = QuadTree()
 
   ok qt
 
