@@ -100,8 +100,7 @@
 
         I.nodes.invoke('clear')
 
-      children: ->
-        I.children.concat(stuckChildren)
+      children: -> I.children.concat(stuckChildren)
 
       insert: (item) ->
         if I.nodes.length
