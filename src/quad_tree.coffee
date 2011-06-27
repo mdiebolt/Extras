@@ -96,8 +96,9 @@
       clear: ->
         stuckChildren.clear()
         I.children.clear()
-        I.nodes.invoke('clear')
         I.nodes.clear()
+
+        I.nodes.invoke('clear')
 
       children: ->
         I.children.concat(stuckChildren)
