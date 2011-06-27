@@ -118,7 +118,7 @@
 
           node = I.nodes[index]
 
-          if ((item.x > node.x) && (item.y > node.y)) && ((item.x + item.width >= node.x + nodeI.width) || (item.y + item.height >= node.y + node.height))
+          if ((item.x > I.x) && (item.y > I.y)) && ((item.x + item.width >= I.x + I.width) || (item.y + item.height >= I.y + I.height))
             log "here"
             I.children.push(item)
           else
