@@ -128,8 +128,9 @@
               item.x + item.width <= node.I.bounds.x + node.I.bounds.width && 
               item.y >= node.I.bounds.y && 
               item.y + item.height <= node.I.bounds.y + node.I.bounds.height)
-            node.insert(item)
+            I.nodes[index].insert(item)
           else
+            log "here"
             stuckChildren.push(item)
 
           return
