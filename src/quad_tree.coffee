@@ -13,9 +13,6 @@
     self =   
       I: I
 
-      eachCollisionPair: (A, B) ->
-        return $.noop
-
       clear: -> root.clear()
 
       insert: (obj) ->
