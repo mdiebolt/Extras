@@ -126,11 +126,11 @@
 
           return I.children.clear();
 
-      retrieve: (item) ->      
+      retrieve: (item) ->     
         index = findQuadrant(item)
-        result = (if I.nodes[index] == null then undefined else I.nodes[index].retrieve(item)) || I.children
 
-        return result
+        I.nodes[index]?.retrieve(item) || I.children
+
 
     return self
 
