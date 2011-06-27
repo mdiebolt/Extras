@@ -2,7 +2,7 @@ module "QuadTree"
 
 # overwrites window.qt before each test is run
 QUnit.testStart = ->
-  window.qt = QuadTree()
+  window.qt = window.QuadTree()
 
 test "should have default for max children", ->
   ok qt.maxChildren
@@ -22,6 +22,9 @@ test "should be able to set maxChildren and maxDepth", ->
   equals qt.maxChildren(), newChildren
   equals qt.maxDepth(), newDepth
 
+  qt.maxChildren(3)
+  qt.maxDepth(4)
+
 test "should be able to insert into the root", ->
   bounds = 
     x: 40
@@ -36,7 +39,9 @@ test "should be able to insert into the root", ->
   ok results.length == 1
 
 test "should subdivide after maxChildren is reached", ->
-  (qt.maxChildren() + 1).times (n) ->
+  log qt.maxChildren()
+
+  (qt.maxChildren()).times (n) ->
     bounds =
       x: 100 * (50 * n)
       y: 60
@@ -45,7 +50,13 @@ test "should subdivide after maxChildren is reached", ->
 
     qt.insert(bounds)
 
-  log qt.root().I.nodes
+  qt.insert
+    x: 400
+    y: 50
+    width: 25
+    height: 30  
+
+  log qt.root().I.nodes[1]
 
   ok qt.root().I.nodes.length > 1
 
