@@ -127,8 +127,6 @@
 
         I.children.push(item)
 
-        log self.children().length
-
         if (I.depth < I.maxDepth) && (self.children().length > I.maxChildren)
           subdivide()
 
