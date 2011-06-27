@@ -132,7 +132,6 @@
 
         I.nodes[index]?.retrieve(item) || I.children
 
-
     return self
 
   window.QuadTree = QuadTree
