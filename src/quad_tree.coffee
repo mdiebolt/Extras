@@ -116,9 +116,15 @@
         if I.nodes.length
           index = findQuadrant(item)
 
-          I.nodes[index].insert(item)
+          node = I.nodes[index]
 
-          return true
+          if ((item.x < node.x) && (item.y < node.y)) && ((item.x + item.width >= node.x + nodeI.width) || (item.y + item.height >= node.y + node.height))
+            log "here"
+            I.children.push(item)
+          else
+            node.insert(item)
+
+            return true
 
         I.children.push(item)
 
