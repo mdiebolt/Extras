@@ -60,9 +60,7 @@
     BOTTOM_RIGHT = 3
 
     findQuadrant = (item) ->
-      bounds = I.bounds
-
-      {x, y} = bounds
+      {x, y} = I.bounds
 
       x_midpoint = x + halfWidth()
       y_midpoint = y + halfHeight()
