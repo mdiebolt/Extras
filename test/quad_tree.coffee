@@ -33,7 +33,7 @@ test "should be able to insert into the root", ->
 
   results = qt.retrieve(bounds)
 
-  ok results.length
+  ok results.length == 1
 
 
 module()
