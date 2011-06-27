@@ -130,6 +130,8 @@
         if (I.depth < I.maxDepth) && (I.children.length > I.maxChildren)
           subdivide()
 
+          debugger
+
           I.children.each (child) ->          
             self.insert(child)
 
