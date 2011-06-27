@@ -133,7 +133,7 @@
           subdivide()
 
           self.children().each (child) ->          
-            return self.insert(child)
+            self.insert(child)
 
           I.children.clear()
 
