@@ -113,7 +113,7 @@
         return I.nodes.clear()
 
       insert: (item) ->
-        if I.nodes.length
+        if I.nodes.length && I.x < (item.x + item.width) < I.x + I.width
           index = findQuadrant(item)
           I.nodes[index].insert(item)
           return true
