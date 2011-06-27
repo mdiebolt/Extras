@@ -138,7 +138,7 @@
 
         I.children.push(item)
 
-        if (I.depth < MAX_DEPTH) && (I.children.length + stuckChildren.length > MAX_CHILDREN)
+        if (I.depth < MAX_DEPTH) && (self.children().length > MAX_CHILDREN)
           subdivide()
 
           self.children().each (child) ->          
