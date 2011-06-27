@@ -39,11 +39,9 @@ test "should be able to insert into the root", ->
   ok results.length == 1
 
 test "should subdivide after maxChildren is reached", ->
-  log qt.maxChildren()
-
   (qt.maxChildren()).times (n) ->
     bounds =
-      x: 100 * (50 * n)
+      x: 100 + (50 * n)
       y: 60
       width: 25
       height: 30
@@ -56,8 +54,6 @@ test "should subdivide after maxChildren is reached", ->
     width: 25
     height: 30  
 
-  log qt.root().I.nodes[1]
-
-  ok qt.root().I.nodes.length > 1
+  equals qt.root().I.nodes[1].I.children.length, 1, "The second subdivision has 1 child since we inserted the maxChildren into the root"
 
 module()
