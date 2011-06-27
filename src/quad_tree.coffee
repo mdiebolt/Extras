@@ -34,6 +34,12 @@
       retrieve: (item) ->
         root.retrieve(item).copy()
 
+    self.MAX_CHILDREN = ->
+      MAX_CHILDREN
+
+    self.MAX_DEPTH = ->
+      MAX_DEPTH
+
     return self
 
   Node = (I) ->
@@ -128,6 +134,4 @@
     return self
 
   window.QuadTree = QuadTree
-  window.QuadTree.MAX_CHILDREN = MAX_CHILDREN  
-  window.QuadTree.MAX_DEPTH = MAX_DEPTH
 )(window)
