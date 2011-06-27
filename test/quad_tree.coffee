@@ -22,5 +22,18 @@ test "should be able to set maxChildren and maxDepth", ->
   equals qt.maxChildren(), newChildren
   equals qt.maxDepth(), newDepth
 
+test "should be able to insert into the root", ->
+  bounds = 
+    x: 40
+    y: 60
+    width: 25
+    height: 30
+
+  qt.insert(bounds)
+
+  results = qt.retrieve(bounds)
+
+  ok results.length
+
 
 module()
