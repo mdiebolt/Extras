@@ -34,10 +34,10 @@
       retrieve: (item) ->
         root.retrieve(item).copy()
 
-    self.MAX_CHILDREN = ->
+    self.maxChildren = ->
       MAX_CHILDREN
 
-    self.MAX_DEPTH = ->
+    self.maxDepth = ->
       MAX_DEPTH
 
     return self
