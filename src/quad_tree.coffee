@@ -9,6 +9,7 @@
 
     self =      
       eachCollisionPair: (A, B) ->
+        return $.noop
 
       clear: -> root.clear()
 
