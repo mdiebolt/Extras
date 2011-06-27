@@ -56,6 +56,9 @@
       depth: 0
       nodes: []
 
+    stuckChildren = []
+    out = []
+
     TOP_LEFT = 0
     TOP_RIGHT = 1
     BOTTOM_LEFT = 2
@@ -110,21 +113,25 @@
       clear: ->
         I.children.clear()
         I.nodes.invoke('clear')
-        return I.nodes.clear()
+        I.nodes.clear()
+
+      children: ->
+        I.children.concat(stuckChildren)
 
       insert: (item) ->
         if I.nodes.length
-          index = findQuadrant(item)
-
+          index = findQuadrant(item)          
           node = I.nodes[index]
 
-          if ((item.x > I.x) && (item.y > I.y)) && ((item.x + item.width >= I.x + I.width) || (item.y + item.height >= I.y + I.height))
-            log "here"
-            I.children.push(item)
-          else
+          if (item.x >= node.I.bounds.x && 
+              item.x + item.width <= node.I.bounds.x + node.I.bounds.width && 
+              item.y >= node.I.bounds.y && 
+              item.y + item.height <= node.I.bounds.y + node.I.bounds.height)
             node.insert(item)
+          else
+            stuckChildren.push(item)
 
-            return true
+          return
 
         I.children.push(item)
 
@@ -135,10 +142,18 @@
 
           return I.children.clear()
 
-      retrieve: (item) ->     
-        index = findQuadrant(item)
+      retrieve: (item) ->  
+        out.clear()
 
-        I.nodes[index]?.retrieve(item) || I.children
+        if I.nodes.length
+          index = findQuadrant(item)
+
+          out.push.apply(out, I.nodes[index]?.retrive(item)
+
+        out.push.apply(out, stuckChildren)
+        out.push.apply(out, I.children)
+
+        return out
 
   window.QuadTree = QuadTree
 )(window)
