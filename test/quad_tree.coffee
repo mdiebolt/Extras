@@ -5,8 +5,8 @@ QUnit.testStart = ->
   window.qt = window.QuadTree()
 
 test "should have default for max children", ->
-  ok qt.maxChildren
-  equals qt.maxChildren(), 5
+  ok qt.I.maxChildren
+  equals qt.I.maxChildren, 5
 
 test "should have default for max depth", ->
   ok qt.maxDepth
