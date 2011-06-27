@@ -54,6 +54,7 @@ test "should subdivide after maxChildren is reached", ->
     width: 25
     height: 30  
 
+  equals qt.root().I.nodes.length, 4, "root should have subdivided into 4 parts"  
   equals qt.root().I.nodes[1].I.children.length, 1, "The second subdivision has 1 child since we inserted the maxChildren into the root"
 
 module()
