@@ -144,13 +144,15 @@ test "should properly subdivide elements with their width and height", ->
     width: 10
     height: 10
 
-  equals qt.root().I.children.length, 2
-  equals qt.root().I.nodes[0].I.children.length, 1
-  equals qt.root().I.nodes[3].I.children.length, 1
-  equals qt.root().I.nodes[3].I.nodes[0].I.children.length, 4
-  equals qt.root().I.nodes[3].I.nodes[3].I.children.length, 1 
+  log qt.root().children()  
 
-  equals qt.root().I.nodes[3].I.nodes[2].I.children.length, 0, "This should be 0 if we are taking width and height into account"
+  equals qt.root().children().length, 2
+  equals qt.root().I.nodes[0].children().length, 1
+  equals qt.root().I.nodes[3].children().length, 1
+  equals qt.root().I.nodes[3].I.nodes[0].children().length, 4
+  equals qt.root().I.nodes[3].I.nodes[3].children().length, 1 
+
+  equals qt.root().I.nodes[3].I.nodes[2].children().length, 0, "This should be 0 if we are taking width and height into account"
 
 module()
 
