@@ -122,12 +122,12 @@
 
         I.children.push(item)
 
-        if (I.depth < MAX_DEPTH) && (I.children.length > MAX_CHILDREN)          
+        if (I.depth < MAX_DEPTH) && (I.children.length > MAX_CHILDREN)
           subdivide()
-          I.children.each (child) ->
+          I.children.each (child) ->          
             return self.insert(child)
 
-          return I.children.clear();
+          return I.children.clear()
 
       retrieve: (item) ->     
         index = findQuadrant(item)
