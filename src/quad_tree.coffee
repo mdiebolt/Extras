@@ -13,8 +13,6 @@
     self =   
       I: I
 
-      clear: -> root.clear()
-
       insert: (obj) ->
         if Object.isArray(obj)
           obj.each (item) ->
