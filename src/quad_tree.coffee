@@ -8,8 +8,6 @@
     root = Node()
 
     self =
-      I: I
-
       root: -> root
 
       clear: -> root.clear()
