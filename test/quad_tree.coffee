@@ -38,6 +38,21 @@ test "should be able to insert into the root", ->
 
   ok results.length == 1
 
+test "should insert an array", ->
+  qt.insert([{
+    x: 40
+    y: 50
+    width: 20
+    height: 20
+  }, {
+    x: 30
+    y: 40
+    width: 10
+    height: 15
+  }])
+
+  equals qt.root().I.children.length, 2  
+
 test "should subdivide after maxChildren is reached", ->
   (qt.maxChildren()).times (n) ->
     bounds =
@@ -69,7 +84,7 @@ test "should insert into children array when at the max depth", ->
 
     qt.insert(bounds)
 
-  equals qt.root().I.nodes[0].I.nodes[0].I.children.length, qt.maxChildren() * 3 
+  equals qt.root().I.nodes[0].I.nodes[0].I.children.length, qt.maxChildren() * 3   
 
 test "should properly subdivide elements with their width and height", ->
   qt.maxChildren(5)
@@ -135,7 +150,7 @@ test "should properly subdivide elements with their width and height", ->
   equals qt.root().I.nodes[3].I.nodes[0].I.children.length, 4
   equals qt.root().I.nodes[3].I.nodes[3].I.children.length, 1 
 
-  equals qt.root().I.nodes[3].I.nodes[2].I.children.length, 0, "Thid should be 0 if we are taking width and height into account"
+  equals qt.root().I.nodes[3].I.nodes[2].I.children.length, 0, "This should be 0 if we are taking width and height into account"
 
 module()
 
