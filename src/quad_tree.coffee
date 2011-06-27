@@ -119,6 +119,7 @@
           return true
 
         I.children.push(item)
+
         if ((I.depth < MAX_DEPTH) && (I.children.length > MAX_CHILDREN)) 
           subdivide()
           I.children.each (child) ->
@@ -126,7 +127,7 @@
 
           return I.children.clear();
 
-      retrieve: (item) ->
+      retrieve: (item) ->      
         index = findQuadrant(item)
         return (if I.nodes[index] == null then undefined else I.nodes[index].retrieve(item)) || I.children
 
