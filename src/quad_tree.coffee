@@ -72,11 +72,8 @@
 
       return index
 
-    halfWidth = ->
-      (I.bounds.width / 2).floor()
-
-    halfHeight = ->
-      (I.bounds.height / 2).floor()
+    halfWidth = -> (I.bounds.width / 2).floor()
+    halfHeight = -> (I.bounds.height / 2).floor()
 
     subdivide = ->
       increased_depth = I.depth + 1
