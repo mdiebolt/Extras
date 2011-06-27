@@ -51,7 +51,7 @@ test "should insert an array", ->
     height: 15
   }])
 
-  equals qt.root().I.children.length, 2  
+  equals qt.root().children().length, 2  
 
 test "should subdivide after maxChildren is reached", ->
   (qt.maxChildren()).times (n) ->
@@ -70,7 +70,7 @@ test "should subdivide after maxChildren is reached", ->
     height: 30  
 
   equals qt.root().I.nodes.length, 4, "root should have subdivided into 4 parts"  
-  equals qt.root().I.nodes[1].I.children.length, 1, "The second subdivision has 1 child since we inserted the maxChildren into the root"
+  equals qt.root().I.nodes[1].children().length, 1, "The second subdivision has 1 child since we inserted the maxChildren into the root"
 
 test "should insert into children array when at the max depth", ->
   qt.maxDepth(2)
@@ -84,7 +84,7 @@ test "should insert into children array when at the max depth", ->
 
     qt.insert(bounds)
 
-  equals qt.root().I.nodes[0].I.nodes[0].I.children.length, qt.maxChildren() * 3   
+  equals qt.root().I.nodes[0].I.nodes[0].children().length, qt.maxChildren() * 3   
 
 test "should properly subdivide elements with their width and height", ->
   qt.maxChildren(5)
@@ -144,7 +144,7 @@ test "should properly subdivide elements with their width and height", ->
     width: 10
     height: 10
 
-  log qt.root().children()  
+  log qt.root().I.nodes[3].children()
 
   equals qt.root().children().length, 2
   equals qt.root().I.nodes[0].children().length, 1
