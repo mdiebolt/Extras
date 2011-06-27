@@ -137,10 +137,11 @@
 
         if (I.depth < MAX_DEPTH) && (I.children.length > MAX_CHILDREN)
           subdivide()
+
           I.children.each (child) ->          
             return self.insert(child)
 
-          return I.children.clear()
+          I.children.clear()
 
       retrieve: (item) ->  
         out.clear()
@@ -148,7 +149,7 @@
         if I.nodes.length
           index = findQuadrant(item)
 
-          out.push.apply(out, I.nodes[index]?.retrive(item)
+          out.push.apply(out, I.nodes[index].retrive(item)
 
         out.push.apply(out, stuckChildren)
         out.push.apply(out, I.children)
