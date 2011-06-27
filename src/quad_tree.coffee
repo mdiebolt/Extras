@@ -149,7 +149,7 @@
         if I.nodes.length
           index = findQuadrant(item)
 
-          out.push.apply(out, I.nodes[index].retrive(item)
+          out.push.apply(out, I.nodes[index].retrive(item))
 
         out.push.apply(out, stuckChildren)
         out.push.apply(out, I.children)
