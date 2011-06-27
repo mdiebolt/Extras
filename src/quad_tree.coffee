@@ -1,4 +1,7 @@
 ((window) ->
+  MAX_CHILDREN = 5
+  MAX_DEPTH = 4
+
   QuadTree = (I) ->
     I ||= {}
 
@@ -8,13 +11,9 @@
         y: 0
         width: App.width || 640
         height: App.height || 480
-      maxChildren: 5
-      maxDepth: 4
 
     root = Node
-      bounds: I.bounds,
-      maxDepth: I.maxDepth
-      maxChildren: I.maxChildren
+      bounds: I.bounds
 
     self =
       I: I
@@ -48,8 +47,6 @@
         height: 240
       children: []
       depth: 0
-      maxChildren: 5
-      maxDepth: 4
       nodes: []
 
     TOP_LEFT = 0
@@ -101,8 +98,6 @@
             width: half_width
             height: half_height
           depth: increased_depth
-          maxChildren: I.maxChildren
-          maxDepth: I.maxDepth
 
     self = 
       I: I
@@ -119,7 +114,7 @@
           return true
 
         I.children.push(item)
-        if ((I.depth < I.maxDepth) && (I.children.length > I.maxChildren)) 
+        if ((I.depth < MAX_DEPTH) && (I.children.length > MAX_CHILDREN)) 
           subdivide()
           I.children.each (child) ->
             return self.insert(child)
