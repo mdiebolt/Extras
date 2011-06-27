@@ -9,21 +9,19 @@ test "should have default for max children", ->
   equals qt.I.maxChildren, 5
 
 test "should have default for max depth", ->
-  ok qt.maxDepth
-  equals qt.maxDepth(), 4 
+  ok qt.I.maxDepth
+  equals qt.I.maxDepth, 4 
 
 test "should be able to set maxChildren and maxDepth", ->
   newChildren = 7
   newDepth = 9
 
-  qt.maxChildren(newChildren)
-  qt.maxDepth(newDepth)
+  qt = QuadTree
+    maxChildren: 7
+    maxDepth: 9
 
-  equals qt.maxChildren(), newChildren
-  equals qt.maxDepth(), newDepth
-
-  qt.maxChildren(3)
-  qt.maxDepth(4)
+  equals qt.I.maxChildren, newChildren
+  equals qt.I.maxDepth, newDepth
 
 test "should be able to insert into the root", ->
   bounds = 
@@ -54,7 +52,7 @@ test "should insert an array", ->
   equals qt.root().children().length, 2  
 
 test "should subdivide after maxChildren is reached", ->
-  (qt.maxChildren()).times (n) ->
+  (qt.I.maxChildren).times (n) ->
     bounds =
       x: 100 + (50 * n)
       y: 60
@@ -73,23 +71,21 @@ test "should subdivide after maxChildren is reached", ->
   equals qt.root().I.nodes[1].children().length, 1, "The second subdivision has 1 child since we inserted the maxChildren into the root"
 
 test "should insert into children array when at the max depth", ->
-  qt.maxDepth(2)
+  qt = QuadTree
+    maxDepth: 2
 
-  (qt.maxChildren() * 3).times (n) ->
+  (qt.I.maxChildren * 3).times ->
     bounds =
-      x: 0
-      y: 0
+      x: 10
+      y: 10
       width: 50
       height: 50
 
     qt.insert(bounds)
 
-  equals qt.root().I.nodes[0].I.nodes[0].children().length, qt.maxChildren() * 3   
+  equals qt.root().I.nodes[0].I.nodes[0].children().length, qt.I.maxChildren * 3   
 
 test "should properly subdivide elements with their width and height", ->
-  qt.maxChildren(5)
-  qt.maxDepth(4)
-
   qt.insert
     x: 50
     y: 50
