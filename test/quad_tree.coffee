@@ -133,6 +133,7 @@ test "should properly subdivide elements with their width and height", ->
   equals qt.root().I.nodes[0].I.children.length, 1
   equals qt.root().I.nodes[3].I.children.length, 1
   equals qt.root().I.nodes[3].I.nodes[0].I.children.length, 4
+  equals qt.root().I.nodes[3].I.nodes[2].I.children.length, 0
   equals qt.root().I.nodes[3].I.nodes[3].I.children.length, 1 
 
 module()
