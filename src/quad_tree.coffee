@@ -6,8 +6,8 @@
       bounds:
         x: 0
         y: 0
-        width: 480
-        height: 320
+        width: App.width || 480
+        height: App.height || 320
       maxChildren: 5
       maxDepth: 4
 
