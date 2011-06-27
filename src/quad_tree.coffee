@@ -124,6 +124,8 @@
           index = findQuadrant(item)          
           node = I.nodes[index]
 
+          log index
+
           if (item.x >= node.I.bounds.x && 
               item.x + item.width <= node.I.bounds.x + node.I.bounds.width && 
               item.y >= node.I.bounds.y && 
