@@ -111,6 +111,7 @@
       I: I
 
       clear: ->
+        stuckChildren.clear()
         I.children.clear()
         I.nodes.invoke('clear')
         I.nodes.clear()
