@@ -128,6 +128,6 @@
     return self
 
   window.QuadTree = QuadTree
+  window.QuadTree.MAX_CHILDREN = MAX_CHILDREN  
   window.QuadTree.MAX_DEPTH = MAX_DEPTH
-  window.QuadTree.MAX_CHILDREN = MAX_CHILDREN
 )(window)
