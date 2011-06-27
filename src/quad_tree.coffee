@@ -1,11 +1,14 @@
 ((window) ->
-  MAX_CHILDREN = 5
-  MAX_DEPTH = 4
-
   QuadTree = (I) ->
     I ||= {}
 
-    root = Node()
+    $.reverseMerge I,
+      maxChildren: 5
+      maxDepth: 4
+
+    root = Node
+      maxChildren: I.maxChildren
+      maxDepth: I.maxDepth
 
     self =      
       eachCollisionPair: (A, B) ->
@@ -24,22 +27,6 @@
         root.retrieve(item).copy()
 
       root: -> root
-
-    self.maxChildren = (val) ->
-      if val?
-        MAX_CHILDREN = val
-
-        return self
-      else
-        MAX_CHILDREN
-
-    self.maxDepth = (val) ->
-      if val?
-        MAX_DEPTH = val
-
-        return self
-      else
-        MAX_DEPTH
 
     return self
 
@@ -123,6 +110,8 @@
         if I.nodes.length
           index = findQuadrant(item)          
           node = I.nodes[index]
+
+          debugger
 
           if (item.x >= node.I.bounds.x && 
               item.x + item.width <= node.I.bounds.x + node.I.bounds.width && 
