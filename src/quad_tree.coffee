@@ -21,7 +21,9 @@
         else 
           root.insert(obj)
 
-      retrieve: (item) -> root.retrieve(item).copy()
+      retrieve: (item) -> 
+        debugger
+        root.retrieve(item).copy()
 
     self.maxChildren = (val) ->
       if val?
@@ -127,7 +129,11 @@
 
       retrieve: (item) ->      
         index = findQuadrant(item)
-        return (if I.nodes[index] == null then undefined else I.nodes[index].retrieve(item)) || I.children
+        result = (if I.nodes[index] == null then undefined else I.nodes[index].retrieve(item)) || I.children
+
+        debugger
+
+        return result
 
     return self
 
