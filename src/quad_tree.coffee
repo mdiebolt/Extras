@@ -42,7 +42,7 @@
         width: App.width || 640
         height: App.height || 480
       children: []
-      depth: 0
+      depth: 1
       maxChildren: 5
       maxDepth: 4
       nodes: []
