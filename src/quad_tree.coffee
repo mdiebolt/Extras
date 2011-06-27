@@ -34,11 +34,21 @@
       retrieve: (item) ->
         root.retrieve(item).copy()
 
-    self.maxChildren = ->
-      MAX_CHILDREN
+    self.maxChildren = (val) ->
+      if val?
+        MAX_CHILDREN = val
 
-    self.maxDepth = ->
-      MAX_DEPTH
+        return self
+      else
+        MAX_CHILDREN
+
+    self.maxDepth = (val) ->
+      if val?
+        MAX_DEPTH = val
+
+        return self
+      else
+        MAX_DEPTH
 
     return self
 
