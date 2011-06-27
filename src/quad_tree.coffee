@@ -41,6 +41,8 @@
         height: App.height || 480
       children: []
       depth: 0
+      maxChildren: 5
+      maxDepth: 4
       nodes: []
 
     stuckChildren = []
@@ -125,7 +127,7 @@
 
         I.children.push(item)
 
-        if (I.depth < MAX_DEPTH) && (self.children().length > MAX_CHILDREN)
+        if (I.depth < I.maxDepth) && (self.children().length > I.maxChildren)
           subdivide()
 
           self.children().each (child) ->          
