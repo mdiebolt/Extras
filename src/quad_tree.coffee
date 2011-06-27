@@ -10,7 +10,9 @@
       maxChildren: I.maxChildren
       maxDepth: I.maxDepth
 
-    self =      
+    self =   
+      I: I
+
       eachCollisionPair: (A, B) ->
         return $.noop
 
