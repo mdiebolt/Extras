@@ -7,8 +7,8 @@
 
     root = Node()
 
-    self =
-      root: -> root
+    self =      
+      eachCollisionPair: (A, B) ->
 
       clear: -> root.clear()
 
@@ -21,6 +21,8 @@
 
       retrieve: (item) -> 
         root.retrieve(item).copy()
+
+      root: -> root
 
     self.maxChildren = (val) ->
       if val?
