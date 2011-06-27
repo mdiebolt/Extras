@@ -129,10 +129,10 @@
 
         I.children.push(item)
 
-        if (I.depth < I.maxDepth) && (self.children().length > I.maxChildren)
+        if (I.depth < I.maxDepth) && (I.children.length > I.maxChildren)
           subdivide()
 
-          self.children().each (child) ->          
+          I.children.each (child) ->          
             self.insert(child)
 
           I.children.clear()
