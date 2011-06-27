@@ -10,11 +10,9 @@
     self =
       I: I
 
-      root: ->
-        root
+      root: -> root
 
-      clear: ->
-        root.clear()
+      clear: -> root.clear()
 
       insert: (obj) ->
         if Object.isArray(obj)
@@ -23,8 +21,7 @@
         else 
           root.insert(obj)
 
-      retrieve: (item) ->
-        root.retrieve(item).copy()
+      retrieve: (item) -> root.retrieve(item).copy()
 
     self.maxChildren = (val) ->
       if val?
