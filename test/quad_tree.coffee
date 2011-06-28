@@ -141,18 +141,18 @@ test "#eachPair", ->
       width: 10
       height: 20
 
-    qt.insert
-      x: 250
-      y: 50
-      width: 20
-      height: 30
+  qt.insert
+    x: 250
+    y: 50
+    width: 20
+    height: 30
 
   timesCalled = 0
 
   qt.eachPair (a, b) ->
     timesCalled++
 
-  equals timesCalled, 6
+  equals timesCalled, (5 + 4 + 3 + 2 + 1) - 5
 
 module()
 
