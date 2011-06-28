@@ -20,6 +20,7 @@
 
       eachPair: (iterator) ->
         root.I.nodes.each (node) ->
+          debugger
           collidables = root.retrieve(node)
 
           length = collidables.length
