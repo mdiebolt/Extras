@@ -81,8 +81,6 @@
       half_width = halfWidth()
       half_height = halfHeight()
 
-      log I.maxChildren
-
       4.times (n) ->
         I.nodes[n] = Node
           bounds: 
