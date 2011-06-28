@@ -107,10 +107,8 @@
           index = findQuadrant(item)          
           nodeBounds = I.nodes[index].I.bounds
 
-          if (item.x >= nodeBounds.x && 
-              item.x + item.width <= nodeBounds.x + nodeBounds.width && 
-              item.y >= nodeBounds.y && 
-              item.y + item.height <= nodeBounds.y + nodeBounds.height)
+          if (item.x >= nodeBounds.x && item.x + item.width <= nodeBounds.x + nodeBounds.width) && 
+             (item.y >= nodeBounds.y && item.y + item.height <= nodeBounds.y + nodeBounds.height)
             I.nodes[index].insert(item)
           else
             stuckChildren.push(item)
