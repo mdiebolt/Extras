@@ -85,7 +85,7 @@ test "should insert into children array when at the max depth", ->
 
     qt.insert(bounds)
 
-  equals qt.root().I.nodes[0].I.nodes[0].I.nodes[0].children().length, qt.I.maxChildren * levelsDeep  
+  equals qt.root().I.nodes[0].children().length, qt.I.maxChildren * levelsDeep  
 
 test "should properly subdivide elements with their width and height", ->
   window.qt = QuadTree
