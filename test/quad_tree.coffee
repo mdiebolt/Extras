@@ -142,7 +142,7 @@ test "#eachPair", ->
       height: 20
 
   qt.insert
-    x: 150
+    x: 250
     y: 50
     width: 20
     height: 30
@@ -153,6 +153,28 @@ test "#eachPair", ->
     timesCalled++
 
   equals timesCalled, (5 + 4 + 3 + 2 + 1) - 5
+
+test "#eachPair with an overlap node", ->
+  5.times ->
+    qt.insert
+      x: 50
+      y: 50
+      width: 10
+      height: 20
+
+  qt.insert
+    x: 150
+    y: 50
+    width: 20
+    height: 30
+
+  timesCalled = 0
+
+  qt.eachPair (a, b) ->
+    timesCalled++
+
+  equals timesCalled, (6 + 5 + 4 + 3 + 2 + 1) - 6
+
 
 module()
 
