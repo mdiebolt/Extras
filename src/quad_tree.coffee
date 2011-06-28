@@ -3,8 +3,8 @@
     I ||= {}
 
     $.reverseMerge I,
-      maxChildren: 5
-      maxDepth: 4
+      maxChildren: 3
+      maxDepth: 3
 
     root = Node
       maxChildren: I.maxChildren
@@ -38,8 +38,8 @@
         height: App.height || 480
       children: []
       depth: 1
-      maxChildren: 5
-      maxDepth: 4
+      maxChildren: 3
+      maxDepth: 3
       nodes: []
 
     stuckChildren = []
@@ -84,10 +84,12 @@
       4.times (n) ->
         I.nodes[n] = Node
           bounds: 
-            x: half_width * (n % 2)
-            y: half_height * (if n < 2 then 0 else 1)
+            x: I.bounds.x + (half_width * (n % 2))
+            y: I.bounds.y + (half_height * (if n < 2 then 0 else 1))
             width: half_width
             height: half_height
+            maxChildren: I.maxChildren
+            maxDepth: I.maxDepth
           depth: increased_depth
 
     self = 
