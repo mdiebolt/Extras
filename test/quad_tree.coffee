@@ -151,8 +151,6 @@ test "#eachPair", ->
 
   qt.eachPair (a, b) ->
     timesCalled++
-    log a
-    log b
 
   equals timesCalled, (5 + 4 + 3 + 2 + 1) - 5
 
