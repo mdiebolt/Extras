@@ -149,8 +149,6 @@ test "#eachPair", ->
 
   timesCalled = 0
 
-  log qt.root()
-
   qt.eachPair (a, b) ->
     timesCalled++
 
