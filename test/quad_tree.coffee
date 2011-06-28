@@ -142,7 +142,7 @@ test "#eachPair", ->
       height: 20
 
   qt.insert
-    x: 250
+    x: 150
     y: 50
     width: 20
     height: 30
