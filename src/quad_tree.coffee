@@ -141,6 +141,7 @@
             I.nodes[n].eachPair(iterator)
         else  
           if self.children().length > 1   
+            debugger
             self.children().eachPair (A, B) ->
               iterator(A, B)       
 
