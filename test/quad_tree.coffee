@@ -52,7 +52,7 @@ test "should insert an array", ->
   equals qt.root().children().length, 2
 
 test "should subdivide after maxChildren is reached", ->
-  (qt.I.maxChildren).times (n) ->
+  qt.I.maxChildren.times (n) ->
     bounds =
       x: 100 + (50 * n)
       y: 60
