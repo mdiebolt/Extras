@@ -19,7 +19,8 @@
       I: I
 
       eachPair: (A, B) ->
-        $.noop
+        I.nodes.map (node) ->
+          collidables = self.retrieve(node)
 
       insert: (obj) ->
         if Object.isArray(obj)
