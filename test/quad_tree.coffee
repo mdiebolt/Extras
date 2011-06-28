@@ -149,7 +149,7 @@ test "#eachPair", ->
 
   timesCalled = 0
 
-  qt.root().eachNode (a, b) ->
+  qt.eachPair (a, b) ->
     timesCalled++
 
   equals timesCalled, 6
