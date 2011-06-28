@@ -19,7 +19,7 @@
       I: I
 
       eachPair: (iterator) ->
-        root.eachNode(iterator)
+        root.eachPair(iterator)
 
       insert: (obj) ->
         if Object.isArray(obj)
@@ -135,10 +135,10 @@
 
           I.children.clear()
 
-      eachNode: (iterator) ->
+      eachPair: (iterator) ->
         if length = I.nodes.length
           length.times (n) ->
-            I.nodes[n].eachNode(iterator)
+            I.nodes[n].eachPair(iterator)
         else  
           if self.children().length > 1   
             self.children().eachPair (A, B) ->
