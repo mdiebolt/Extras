@@ -19,8 +19,8 @@
       I: I
 
       eachPair: (iterator) ->
-        I.nodes.each (node) ->
-          collidables = self.retrieve(node)
+        root.I.nodes.each (node) ->
+          collidables = root.retrieve(node)
 
           length = collidables.length
           i = 0
@@ -156,7 +156,7 @@
         if I.nodes.length
           index = findQuadrant(item)
 
-          out.push.apply(out, I.nodes[index].retrive(item))
+          out.push.apply(out, I.nodes[index].retrieve(item))
 
         out.push.apply(out, stuckChildren)
         out.push.apply(out, I.children)
