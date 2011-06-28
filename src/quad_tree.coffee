@@ -150,10 +150,10 @@
 
       eachNode: (iterator) ->
         if I.nodes.length
-          I.nodes[0].retrieveByNode()
-          I.nodes[1].retrieveByNode()
-          I.nodes[2].retrieveByNode()
-          I.nodes[3].retrieveByNode() 
+          I.nodes[0].eachNode(iterator)
+          I.nodes[1].eachNode(iterator)
+          I.nodes[2].eachNode(iterator)
+          I.nodes[3].eachNode(iterator) 
         else
           iterator(self.children())          
 
