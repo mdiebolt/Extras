@@ -150,6 +150,13 @@
 
           I.children.clear()
 
+      retrieveByNode: ->
+        if I.nodes.length
+          I.nodes[0].retrieveByNode()
+          I.nodes[1].retrieveByNode()
+          I.nodes[2].retrieveByNode()
+          I.nodes[3].retrieveByNode()        
+
       retrieve: (item) -> 
         out.clear()
 
