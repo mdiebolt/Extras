@@ -141,7 +141,6 @@
             I.nodes[n].eachPair(iterator)
         else  
           if self.children().length > 1
-            log self.children() 
             self.children().eachPair (A, B) ->            
               iterator(A, B)       
 
