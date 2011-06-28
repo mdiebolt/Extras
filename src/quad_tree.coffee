@@ -151,8 +151,6 @@
           I.children.clear()
 
       retrieve: (item) -> 
-        debugger
-
         out.clear()
 
         if I.nodes.length
