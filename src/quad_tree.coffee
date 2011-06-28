@@ -1,3 +1,8 @@
+###
+  based on QuadTree.js by Mike Chambers
+  https://github.com/mikechambers/ExamplesByMesh/blob/master/JavaScript/QuadTree/src/QuadTree.js  
+###
+
 ((window) ->
   QuadTree = (I) ->
     I ||= {}
