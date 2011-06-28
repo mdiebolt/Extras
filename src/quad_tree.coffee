@@ -39,17 +39,16 @@
     I ||= {}
 
     $.reverseMerge I, 
-      bounds: 
-        x: 0
-        y: 0
-        width: App.width || 640
-        height: App.height || 480
       children: []
       depth: 1
       maxChildren: 5
       maxDepth: 4
       nodes: []
       parent: null
+      x: 0
+      y: 0
+      width: App.width || 640
+      height: App.height || 480
 
     overlapChildren = []
     out = []
@@ -60,7 +59,7 @@
     BOTTOM_RIGHT = 3
 
     findQuadrant = (item) ->
-      {x, y} = I.bounds
+      {x, y} = I
 
       x_midpoint = x + halfWidth()
       y_midpoint = y + halfHeight()
@@ -81,8 +80,8 @@
 
       return index
 
-    halfWidth = -> (I.bounds.width / 2).floor()
-    halfHeight = -> (I.bounds.height / 2).floor()
+    halfWidth = -> (I.width / 2).floor()
+    halfHeight = -> (I.height / 2).floor()
 
     subdivide = ->
       increased_depth = I.depth + 1
@@ -92,15 +91,14 @@
 
       4.times (n) ->
         I.nodes[n] = Node
-          bounds: 
-            x: I.bounds.x + (half_width * (n % 2))
-            y: I.bounds.y + (half_height * (if n < 2 then 0 else 1))
-            width: half_width
-            height: half_height
           depth: increased_depth            
           maxChildren: I.maxChildren
           maxDepth: I.maxDepth
           parent: self
+          x: I.x + (half_width * (n % 2))
+          y: I.y + (half_height * (if n < 2 then 0 else 1))
+          width: half_width
+          height: half_height          
 
     self = 
       I: I
@@ -117,7 +115,7 @@
       insert: (item) ->
         if I.nodes.length
           index = findQuadrant(item)          
-          nodeBounds = I.nodes[index].I.bounds
+          nodeBounds = I.nodes[index].I
 
           if (item.x >= nodeBounds.x && item.x + item.width <= nodeBounds.x + nodeBounds.width) && 
              (item.y >= nodeBounds.y && item.y + item.height <= nodeBounds.y + nodeBounds.height)
