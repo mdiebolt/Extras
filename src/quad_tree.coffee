@@ -149,13 +149,13 @@
           I.children.clear()
 
       eachNode: (iterator) ->
-        if I.nodes.length
-          I.nodes[0].eachNode(iterator)
-          I.nodes[1].eachNode(iterator)
-          I.nodes[2].eachNode(iterator)
-          I.nodes[3].eachNode(iterator) 
-        else
-          iterator(self.children()) if self.children().length > 1          
+        if length = I.nodes.length
+          length.times (n) ->
+            I.nodes[n].eachNode(iterator)
+        else  
+          if self.children().length > 1   
+            log "here"
+            iterator(self.children())       
 
       retrieve: (item) -> 
         out.clear()
