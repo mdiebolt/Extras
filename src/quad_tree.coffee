@@ -99,7 +99,7 @@
           depth: increased_depth            
           maxChildren: I.maxChildren
           maxDepth: I.maxDepth
-          parent: self
+          parent: null
 
     self = 
       I: I
