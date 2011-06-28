@@ -96,9 +96,10 @@
             y: I.bounds.y + (half_height * (if n < 2 then 0 else 1))
             width: half_width
             height: half_height
+          depth: increased_depth            
           maxChildren: I.maxChildren
           maxDepth: I.maxDepth
-          depth: increased_depth
+          parent: self
 
     self = 
       I: I
