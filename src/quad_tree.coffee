@@ -20,7 +20,6 @@
 
       eachPair: (iterator) ->
         root.I.nodes.each (node) ->
-          debugger
           collidables = root.retrieve(node)
 
           length = collidables.length
@@ -151,7 +150,9 @@
 
           I.children.clear()
 
-      retrieve: (item) ->  
+      retrieve: (item) -> 
+        debugger
+
         out.clear()
 
         if I.nodes.length
