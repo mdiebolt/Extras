@@ -18,22 +18,6 @@
     self =   
       I: I
 
-      eachPair: (iterator) ->
-        root.eachNode (children) -> 
-          length = children.length
-          i = 0
-
-          while i < length
-            a = children[i]
-            j = i + 1
-            i += 1
-
-            while j < length
-              b = children[j]
-              j += 1
-
-              iterator(a, b)
-
       insert: (obj) ->
         if Object.isArray(obj)
           obj.each (item) ->
@@ -154,7 +138,8 @@
             I.nodes[n].eachNode(iterator)
         else  
           if self.children().length > 1   
-            iterator(self.children())       
+            self.children().eachPair (A, B) ->
+              iterator(A, B)       
 
       retrieve: (item) -> 
         out.clear()
