@@ -6,10 +6,12 @@
       maxChildren: 5
       maxDepth: 4
 
-    root = Node(
+    MAX_CHILDREN = I.maxChildren
+    MAX_DEPTH = I.maxDepth
+
+    root = Node
       maxChildren: I.maxChildren
       maxDepth: I.maxDepth
-    )
 
     self =   
       I: I
