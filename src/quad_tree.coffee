@@ -18,7 +18,7 @@
     self =   
       I: I
 
-      eachPair: (iterator, context) ->
+      eachPair: (iterator) ->
         I.nodes.each (node) ->
           collidables = self.retrieve(node)
 
@@ -34,7 +34,7 @@
               b = collidables[j]
               j += 1
 
-              iterator.call context, a, b
+              iterator(a, b)
 
       insert: (obj) ->
         if Object.isArray(obj)
