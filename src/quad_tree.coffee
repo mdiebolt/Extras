@@ -3,8 +3,8 @@
     I ||= {}
 
     $.reverseMerge I,
-      maxChildren: 3
-      maxDepth: 3
+      maxChildren: 5
+      maxDepth: 4
 
     root = Node
       maxChildren: I.maxChildren
@@ -38,8 +38,8 @@
         height: App.height || 480
       children: []
       depth: 1
-      maxChildren: 3
-      maxDepth: 3
+      maxChildren: 5
+      maxDepth: 4
       nodes: []
 
     stuckChildren = []
