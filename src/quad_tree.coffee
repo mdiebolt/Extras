@@ -18,9 +18,23 @@
     self =   
       I: I
 
-      eachPair: (A, B) ->
+      eachPair: (iterator, context) ->
         I.nodes.map (node) ->
           collidables = self.retrieve(node)
+
+          length = collidables.length
+          i = 0
+
+          while i < length
+            a = collidables[i]
+            j = i + 1
+            i += 1
+
+            while j < length
+              b = collidables[j]
+              j += 1
+
+              iterator.call context, a, b
 
       insert: (obj) ->
         if Object.isArray(obj)
