@@ -170,6 +170,8 @@ test "#eachPair with an overlap node", ->
 
   timesCalled = 0
 
+  log qt.root()
+
   qt.eachPair (a, b) ->
     timesCalled++
 
