@@ -150,7 +150,6 @@ test "#eachPair", ->
   timesCalled = 0
 
   qt.eachPair (a, b) ->
-    log "here"
     timesCalled++
 
   equals timesCalled, 6
