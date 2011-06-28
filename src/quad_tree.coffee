@@ -154,7 +154,6 @@
             I.nodes[n].eachNode(iterator)
         else  
           if self.children().length > 1   
-            log "here"
             iterator(self.children())       
 
       retrieve: (item) -> 
