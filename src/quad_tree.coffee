@@ -49,6 +49,7 @@
       maxChildren: 5
       maxDepth: 4
       nodes: []
+      parent: null
 
     overlapChildren = []
     out = []
@@ -99,7 +100,7 @@
           depth: increased_depth            
           maxChildren: I.maxChildren
           maxDepth: I.maxDepth
-          parent: null
+          parent: self
 
     self = 
       I: I
@@ -140,7 +141,9 @@
         if length = I.nodes.length
           length.times (n) ->
             I.nodes[n].eachPair(iterator)
-        else  
+        else 
+          if I.parent
+
           if self.children().length > 1
             self.children().eachPair (A, B) ->            
               iterator(A, B)       
