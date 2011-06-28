@@ -18,6 +18,9 @@
     self =   
       I: I
 
+      eachPair: (iterator) ->
+        root.eachNode(iterator)
+
       insert: (obj) ->
         if Object.isArray(obj)
           obj.each (item) ->
