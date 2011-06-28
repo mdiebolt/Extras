@@ -19,7 +19,7 @@
       I: I
 
       eachPair: (iterator) ->
-        root.retrieveByNode (children) -> 
+        root.eachNode (children) -> 
           length = children.length
           i = 0
 
@@ -148,7 +148,7 @@
 
           I.children.clear()
 
-      retrieveByNode: (iterator) ->
+      eachNode: (iterator) ->
         if I.nodes.length
           I.nodes[0].retrieveByNode()
           I.nodes[1].retrieveByNode()
