@@ -128,6 +128,8 @@ test "should properly subdivide elements with their width and height", ->
     width: 10
     height: 10
 
+  log qt.root()      
+
   equals qt.root().children().length, 1
   equals qt.root().I.nodes[0].children().length, 1
   equals qt.root().I.nodes[3].children().length, 1
