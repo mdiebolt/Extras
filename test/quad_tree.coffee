@@ -133,5 +133,26 @@ test "should properly subdivide elements with their width and height", ->
   equals qt.root().I.nodes[3].children().length, 1
   equals qt.root().I.nodes[3].I.nodes[0].children().length, 3
 
+test "#eachPair", ->
+  5.times ->
+    qt.insert
+      x: 50
+      y: 50
+      width: 10
+      height: 20
+
+    qt.insert
+      x: 250
+      y: 50
+      width: 20
+      height: 30
+
+  timesCalled = 0
+
+  qt.eachPair (a, b) ->
+    timesCalled++
+
+  equals timesCalled, 6
+
 module()
 
