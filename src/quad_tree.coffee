@@ -19,21 +19,20 @@
       I: I
 
       eachPair: (iterator) ->
-        collidables = root.retrieveByNode()
+        root.retrieveByNode (children) -> 
+          length = children.length
+          i = 0
 
-        length = collidables.length
-        i = 0
+          while i < length
+            a = children[i]
+            j = i + 1
+            i += 1
 
-        while i < length
-          a = collidables[i]
-          j = i + 1
-          i += 1
+            while j < length
+              b = children[j]
+              j += 1
 
-          while j < length
-            b = collidables[j]
-            j += 1
-
-            iterator(a, b)
+              iterator(a, b)
 
       insert: (obj) ->
         if Object.isArray(obj)
@@ -149,15 +148,14 @@
 
           I.children.clear()
 
-      retrieveByNode: ->
+      retrieveByNode: (iterator) ->
         if I.nodes.length
           I.nodes[0].retrieveByNode()
           I.nodes[1].retrieveByNode()
           I.nodes[2].retrieveByNode()
           I.nodes[3].retrieveByNode() 
         else
-          return self.children()
-
+          iterator(self.children())          
 
       retrieve: (item) -> 
         out.clear()
