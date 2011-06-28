@@ -141,12 +141,15 @@
         if length = I.nodes.length
           length.times (n) ->
             I.nodes[n].eachPair(iterator)
-        else 
-          if I.parent
+        else
+          collidables = self.children()
 
-          if self.children().length > 1
-            self.children().eachPair (A, B) ->            
-              iterator(A, B)       
+          if I.parent && I.parent.children().length
+            collidables = collidables.concat(I.parent.children()) 
+
+          if collidables.length > 1
+            collidables.eachPair (A, B) ->            
+              iterator(A, B) 
 
       retrieve: (item) -> 
         out.clear()
