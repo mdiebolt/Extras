@@ -170,13 +170,12 @@ test "#eachPair with an overlap node", ->
 
   timesCalled = 0
 
-  log qt.root()
+  log qt.root().I.nodes[0].children()
 
   qt.eachPair (a, b) ->
     timesCalled++
 
   equals timesCalled, (6 + 5 + 4 + 3 + 2 + 1) - 6
-
 
 module()
 
