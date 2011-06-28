@@ -19,7 +19,7 @@
       I: I
 
       eachPair: (iterator, context) ->
-        I.nodes.map (node) ->
+        I.nodes.each (node) ->
           collidables = self.retrieve(node)
 
           length = collidables.length
