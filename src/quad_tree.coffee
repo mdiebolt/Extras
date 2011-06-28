@@ -155,7 +155,10 @@
           I.nodes[0].retrieveByNode()
           I.nodes[1].retrieveByNode()
           I.nodes[2].retrieveByNode()
-          I.nodes[3].retrieveByNode()        
+          I.nodes[3].retrieveByNode() 
+        else
+          iterator(self.children())
+
 
       retrieve: (item) -> 
         out.clear()
