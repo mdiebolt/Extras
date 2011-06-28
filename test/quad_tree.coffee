@@ -88,7 +88,7 @@ test "should insert into children array when at the max depth", ->
   equals qt.root().I.nodes[0].I.nodes[0].I.nodes[0].children().length, qt.I.maxChildren * levelsDeep  
 
 test "should properly subdivide elements with their width and height", ->
-  qt = QuadTree
+  window.qt = QuadTree
     maxChildren: 3
     maxDepth: 3
 
