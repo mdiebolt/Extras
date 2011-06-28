@@ -66,7 +66,7 @@
       maxDepth: 4
       nodes: []
 
-    stuckChildren = []
+    overlapChildren = []
     out = []
 
     TOP_LEFT = 0
@@ -120,13 +120,13 @@
       I: I
 
       clear: ->
-        stuckChildren.clear()
+        overlapChildren.clear()
         I.children.clear()
         I.nodes.clear()
 
         I.nodes.invoke('clear')
 
-      children: -> I.children.concat(stuckChildren)
+      children: -> I.children.concat(overlapChildren)
 
       insert: (item) ->
         if I.nodes.length
@@ -137,7 +137,7 @@
              (item.y >= nodeBounds.y && item.y + item.height <= nodeBounds.y + nodeBounds.height)
             I.nodes[index].insert(item)
           else
-            stuckChildren.push(item)
+            overlapChildren.push(item)
 
           return
 
@@ -159,7 +159,7 @@
 
           out.push.apply(out, I.nodes[index].retrieve(item))
 
-        out.push.apply(out, stuckChildren)
+        out.push.apply(out, overlapChildren)
         out.push.apply(out, I.children)
 
         return out
