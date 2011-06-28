@@ -13,6 +13,9 @@
     self =   
       I: I
 
+      eachPair: (A, B) ->
+        $.noop
+
       insert: (obj) ->
         if Object.isArray(obj)
           obj.each (item) ->
