@@ -155,7 +155,7 @@
           I.nodes[2].eachNode(iterator)
           I.nodes[3].eachNode(iterator) 
         else
-          iterator(self.children())          
+          iterator(self.children()) if self.children().length > 1          
 
       retrieve: (item) -> 
         out.clear()
