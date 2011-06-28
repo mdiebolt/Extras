@@ -6,9 +6,6 @@
       maxChildren: 5
       maxDepth: 4
 
-    MAX_CHILDREN = I.maxChildren
-    MAX_DEPTH = I.maxDepth
-
     root = Node
       maxChildren: I.maxChildren
       maxDepth: I.maxDepth
@@ -41,6 +38,8 @@
         height: App.height || 480
       children: []
       depth: 1
+      maxChildren: 5
+      maxDepth: 4
       nodes: []
 
     stuckChildren = []
