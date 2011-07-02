@@ -4,7 +4,7 @@ module "QuadTree"
 QUnit.testStart = ->
   window.qt = window.QuadTree()
 
-test "should have default for max children", ->
+test "shoulds have default for max children", ->
   ok qt.I.maxChildren
   equals qt.I.maxChildren, 5
 
