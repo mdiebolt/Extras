@@ -117,8 +117,8 @@
           index = findQuadrant(item)          
           nodeBounds = I.nodes[index].I
 
-          if (item.x >= nodeBounds.x && item.x + item.width <= nodeBounds.x + nodeBounds.width) && 
-             (item.y >= nodeBounds.y && item.y + item.height <= nodeBounds.y + nodeBounds.height)
+          if (item.I.x >= nodeBounds.x && item.I.x + item.I.width <= nodeBounds.x + nodeBounds.width) && 
+             (item.I.y >= nodeBounds.y && item.I.y + item.I.height <= nodeBounds.y + nodeBounds.height)
             I.nodes[index].insert(item)
           else
             overlapChildren.push(item)
