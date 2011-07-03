@@ -197,7 +197,7 @@ test "should properly subdivide elements with their width and height (GameObject
   )
 
   qt.insert(
-    GameObject(
+    a = GameObject(
       x: 340
       y: 270
       width: 10
@@ -205,7 +205,7 @@ test "should properly subdivide elements with their width and height (GameObject
     )
   )
 
-  log qt.root()
+  log a
 
   equals qt.root().children().length, 1
   equals qt.root().I.nodes[0].children().length, 1
