@@ -36,6 +36,19 @@ test "should be able to insert into the root", ->
 
   ok results.length == 1
 
+test "should be able to insert a GameObject into the root", ->
+  obj = GameObject
+    x: 40
+    y: 60
+    width: 25
+    height: 30
+
+  qt.insert(obj)
+
+  results = qt.retrieve(obj)
+
+  ok results.length == 1
+
 test "should insert an array", ->
   qt.insert([{
     x: 40
