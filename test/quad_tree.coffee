@@ -54,20 +54,18 @@ test "should insert an array", ->
 test "should subdivide after maxChildren is reached", ->
   qt.I.maxChildren.times (n) ->
     bounds =
-      I:
-        x: 100 + (50 * n)
-        y: 60
-        width: 25
-        height: 30
+      x: 100 + (50 * n)
+      y: 60
+      width: 25
+      height: 30
 
     qt.insert(bounds)
 
   qt.insert
-    I:
-      x: 400
-      y: 50
-      width: 25
-      height: 30
+    x: 400
+    y: 50
+    width: 25
+    height: 30
 
   equals qt.root().I.nodes.length, 4, "root should have subdivided into 4 parts"
   equals qt.root().I.nodes[1].children().length, 1, "The second subdivision has 1 child since we inserted the maxChildren into the root"
@@ -80,11 +78,10 @@ test "should insert into children array when at the max depth", ->
 
   (qt.I.maxChildren * levelsDeep).times ->
     bounds =
-      I:
-        x: 10
-        y: 10
-        width: 50
-        height: 50
+      x: 10
+      y: 10
+      width: 50
+      height: 50
 
     qt.insert(bounds)
 
@@ -96,46 +93,40 @@ test "should properly subdivide elements with their width and height", ->
     maxDepth: 3
 
   qt.insert
-    I:
-      x: 50
-      y: 50
-      width: 20
-      height: 20
+    x: 50
+    y: 50
+    width: 20
+    height: 20
 
   qt.insert
-    I:
-      x: 300
-      y: 120
-      width: 40
-      height: 20
+    x: 300
+    y: 120
+    width: 40
+    height: 20
 
   qt.insert
-    I:
-      x: 330
-      y: 250
-      width: 10
-      height: 10
+    x: 330
+    y: 250
+    width: 10
+    height: 10
 
   qt.insert
-    I:
-      x: 475
-      y: 380
-      width: 10
-      height: 10
+    x: 475
+    y: 380
+    width: 10
+    height: 10
 
   qt.insert
-    I:
-      x: 350
-      y: 250
-      width: 10
-      height: 10
+    x: 350
+    y: 250
+    width: 10
+    height: 10
 
   qt.insert
-    I:
-      x: 340
-      y: 270
-      width: 10
-      height: 10
+    x: 340
+    y: 270
+    width: 10
+    height: 10
 
   equals qt.root().children().length, 1
   equals qt.root().I.nodes[0].children().length, 1
@@ -145,18 +136,16 @@ test "should properly subdivide elements with their width and height", ->
 test "#eachPair", ->
   5.times ->
     qt.insert
-      I:
-        x: 50
-        y: 50
-        width: 10
-        height: 20
+      x: 50
+      y: 50
+      width: 10
+      height: 20
 
   qt.insert
-    I:
-      x: 250
-      y: 50
-      width: 20
-      height: 30
+    x: 250
+    y: 50
+    width: 20
+    height: 30
 
   timesCalled = 0
 
@@ -168,20 +157,20 @@ test "#eachPair", ->
 test "#eachPair with an overlap node", ->
   5.times ->
     qt.insert
-      I:
-        x: 50
-        y: 50
-        width: 10
-        height: 20
+      x: 50
+      y: 50
+      width: 10
+      height: 20
 
   qt.insert
-    I:
-      x: 150
-      y: 50
-      width: 20
-      height: 30
+    x: 150
+    y: 50
+    width: 20
+    height: 30
 
   timesCalled = 0
+
+  log qt.root().I.nodes[0].children()
 
   qt.eachPair (a, b) ->
     timesCalled++
