@@ -3859,11 +3859,15 @@ EXAMPLES:
         return I.children.concat(overlapChildren);
       },
       insert: function(item) {
-        var index, nodeBounds;
+        var height, index, nodeBounds, width, x, y, _ref, _ref2, _ref3, _ref4;
         if (I.nodes.length) {
           index = findQuadrant(item);
           nodeBounds = I.nodes[index].I;
-          if ((item.x >= nodeBounds.x && item.x + item.width <= nodeBounds.x + nodeBounds.width) && (item.y >= nodeBounds.y && item.y + item.height <= nodeBounds.y + nodeBounds.height)) {
+          x = ((_ref = item.I) != null ? _ref.x : void 0) || item.x;
+          y = ((_ref2 = item.I) != null ? _ref2.y : void 0) || item.y;
+          width = ((_ref3 = item.I) != null ? _ref3.width : void 0) || item.width;
+          height = ((_ref4 = item.I) != null ? _ref4.height : void 0) || item.height;
+          if ((x >= nodeBounds.x && x + width <= nodeBounds.x + nodeBounds.width) && (y >= nodeBounds.y && y + height <= nodeBounds.y + nodeBounds.height)) {
             I.nodes[index].insert(item);
           } else {
             overlapChildren.push(item);
