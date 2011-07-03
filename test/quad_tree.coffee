@@ -160,44 +160,34 @@ test "should properly subdivide elements with their width and height (GameObject
     )
 
   qt.insert
-    GameObject(
-      x: 300
-      y: 120
-      width: 40
-      height: 20
-    )
+    x: 300
+    y: 120
+    width: 40
+    height: 20
 
   qt.insert
-    GameObject(
-      x: 330
-      y: 250
-      width: 10
-      height: 10
-    )
+    x: 330
+    y: 250
+    width: 10
+    height: 10
 
   qt.insert
-    GameObject(
-      x: 475
-      y: 380
-      width: 10
-      height: 10
-    )
+    x: 475
+    y: 380
+    width: 10
+    height: 10
 
   qt.insert
-    GameObject(
-      x: 350
-      y: 250
-      width: 10
-      height: 10
-    )
+    x: 350
+    y: 250
+    width: 10
+    height: 10
 
   qt.insert
-    GameObject(
-      x: 340
-      y: 270
-      width: 10
-      height: 10
-    )
+    x: 340
+    y: 270
+    width: 10
+    height: 10
 
   equals qt.root().children().length, 1
   equals qt.root().I.nodes[0].children().length, 1
