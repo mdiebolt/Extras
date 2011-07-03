@@ -117,10 +117,10 @@
           index = findQuadrant(item)          
           nodeBounds = I.nodes[index].I
 
-          x = item.I.x || item.x
-          y = item.I.y || item.y
-          width = item.I.width || item.width
-          height = item.I.height || item.height
+          x = item.I?.x || item.x
+          y = item.I?.y || item.y
+          width = item.I?.width || item.width
+          height = item.I?.height || item.height
 
           if (x >= nodeBounds.x && x + width <= nodeBounds.x + nodeBounds.width) && 
              (y >= nodeBounds.y && y + height <= nodeBounds.y + nodeBounds.height)
