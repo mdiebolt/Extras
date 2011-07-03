@@ -54,18 +54,20 @@ test "should insert an array", ->
 test "should subdivide after maxChildren is reached", ->
   qt.I.maxChildren.times (n) ->
     bounds =
-      x: 100 + (50 * n)
-      y: 60
-      width: 25
-      height: 30
+      I:
+        x: 100 + (50 * n)
+        y: 60
+        width: 25
+        height: 30
 
     qt.insert(bounds)
 
   qt.insert
-    x: 400
-    y: 50
-    width: 25
-    height: 30
+    I:
+      x: 400
+      y: 50
+      width: 25
+      height: 30
 
   equals qt.root().I.nodes.length, 4, "root should have subdivided into 4 parts"
   equals qt.root().I.nodes[1].children().length, 1, "The second subdivision has 1 child since we inserted the maxChildren into the root"
