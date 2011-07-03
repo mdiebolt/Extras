@@ -205,6 +205,8 @@ test "should properly subdivide elements with their width and height (GameObject
     )
   )
 
+  log qt.root()
+
   equals qt.root().children().length, 1
   equals qt.root().I.nodes[0].children().length, 1
   equals qt.root().I.nodes[3].children().length, 1
@@ -246,8 +248,6 @@ test "#eachPair with an overlap node", ->
     height: 30
 
   timesCalled = 0
-
-  log qt.root().I.nodes[0].children()
 
   qt.eachPair (a, b) ->
     timesCalled++
