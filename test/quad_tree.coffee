@@ -205,8 +205,6 @@ test "should properly subdivide elements with their width and height (GameObject
     )
   )
 
-  log a
-
   equals qt.root().children().length, 1
   equals qt.root().I.nodes[0].children().length, 1
   equals qt.root().I.nodes[3].children().length, 1
