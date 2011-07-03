@@ -197,7 +197,7 @@ test "should properly subdivide elements with their width and height (GameObject
   )
 
   qt.insert(
-    a = GameObject(
+    GameObject(
       x: 340
       y: 270
       width: 10
